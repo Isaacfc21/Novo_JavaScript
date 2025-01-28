@@ -10,7 +10,7 @@ class Login{
         cor: null, //"048",
         img: null, //"logo.png",
         endpoint: null //"https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/"
-    }
+    };
 
     static login=(callback_ok,callback_naook,config)=>{
         this.config = config;
@@ -144,13 +144,11 @@ class Login{
                 sessionStorage.setItem("nomelogado",res.nome);
                 sessionStorage.setItem("acessologado",res.acesso);
                 this.callback_ok();
-                this.fechar();   
+                this.fechar();          
                 // this.logado=true;
                 // this.matlogado=mat;
                 // this.nomelogado=res.nome;
                 // this.acessologado=res.acesso;
-                this.callback_ok();
-                this.fechar();
             }else{
                 sessionStorage.setItem("logado","false");
                 sessionStorage.setItem("matlogado","");
@@ -172,4 +170,28 @@ class Login{
         id_estiloLogin.remove();
     }
 };
-// export{Login}; 
+    /*Exemplo de API*/ 
+    // var http = require('http');
+    // var url = require('url');
+    // http.createServer(function(req,res) {
+    // res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Methods', 'GET, POST,   OPTIONS');
+    // res.writeHead(200, {'Content-Type': 'application/json'});
+    // let parametros=url.parse(req.url,true);
+
+    // let mat = parametros.query.matricula;
+    // let pas = parametros.query.senha;
+
+    // let dados = null
+    // if(mat=="123" && pas=="321"){
+    //     dados = {
+    //     nome: "Isaac",
+    //     acesso: 10,
+    //     } 
+    // }
+    // res.end(JSON.stringify(dados));
+    // }).listen(8080)
+
+    // //https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/?matricula=123&senha=321
+
+    // export{Login}; 

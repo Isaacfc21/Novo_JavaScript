@@ -148,6 +148,7 @@ class Login{
                 this.acessologado=res.acesso;
                 this.callback_ok();
                 this.fechar();
+                console.log(res)
             }else{
                 this.logado=false;
                 this.matlogado=null;

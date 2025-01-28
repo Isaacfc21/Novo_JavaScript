@@ -16,6 +16,11 @@ const callback_naook = () =>{
         textos: null,
         comando_sn: null
     };
-    Cxmsg.mostrar(config,"ERRO","Login não efetuado! Usuário ou senha incorretos.");;
+    Cxmsg.mostrar(config,"ERRO","Login não efetuado! Usuário ou senha incorretos.");
 };
-Login.login(callback_ok,callback_naook);
+const configLogin = {
+    cor: "048",
+    img: "logo.png",
+    endpoint: "https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/"
+};
+Login.login(callback_ok,callback_naook,configLogin);
