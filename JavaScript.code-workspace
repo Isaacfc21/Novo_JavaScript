@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../Desktop/CSS3"
+		},
+		{
+			"path": "../../../Desktop/HTML5"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Exercícios Python"
+		},
+		{
+			"path": "../desafio da VIVO"
+		},
+		{
+			"path": "../Exercícios JavaScript"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Java Script"
+	}
+}
