@@ -1,0 +1,25 @@
+*{
+    border: none;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+input,button{
+    margin-bottom: 10px;
+}
+input[type=url]{
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+}
+button{
+    background-color: #eee;
+    padding: 5px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}

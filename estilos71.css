@@ -1,0 +1,97 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.dflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eee;
+    border: 3px solid #bbb;
+    width: 330px;
+}
+.div_nome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 40px;
+    width: 210px;
+}
+.div_display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f00;
+    width: 210px;
+}
+.display{
+    width: 210px;
+    background-color: #aaa;
+    text-align: right;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 20px;
+}
+.div_teclas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    flex-wrap: wrap;
+    border: 1px solid #f00;
+    margin: 2px;
+    background-color: #000;
+}
+.tecla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0ff;
+    border: 3px solid #888;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.teclaOp{
+    background-color: #f44 !important;
+    border-color: #800 !important;
+    border: 3px solid #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.off{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aaa;
+    border: 3px solid #000;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}

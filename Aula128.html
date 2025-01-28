@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 128 de Java Script</title>
+    <link rel="stylesheet" href="estilos128.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 300px; height: 300px;">
+        <canvas id="grafico1" style="width: 500px; height: 500px;"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('grafico1');
+
+        let labelsX = ["Disponibilidade", "Qualidade", "Performance"]
+        let valores = [0,0,0]
+      
+        let grafico1 = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labelsX,
+            datasets: [{
+              label: '# of Votes',
+              data: valores,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+        const obterDados = () => {
+            const endpoint = "https://e84d08fb-dd2e-45e2-b5ae-a5627f5b1644-00-3kx4sex27jm6m.worf.replit.dev/"
+            fetch(endpoint)
+            .then(res => res.json()) 
+            .then(res => {
+                // console.log(res.disponibilidade)
+                // console.log(res.qualidade)
+                // console.log(res.performance)
+                valores[0] = res.disponibilidade
+                valores[1] = res.qualidade
+                valores[2] = res.performance
+
+                grafico1.update()
+            })
+            .catch(erro => {
+                console.log("ERRO: " + erro)
+            })
+        }
+        let intervalo = setInterval(obterDados,3000)
+
+    </script>
+</body>
+</html>

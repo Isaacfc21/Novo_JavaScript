@@ -1,0 +1,75 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    border: none;
+    box-sizing: border-box;
+    font-size: large;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;                  
+    background-color: #888; 
+}
+.produtos {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    background-color: white;
+    border: 3px solid black;
+    padding: 5px; 
+    max-width: 100%; 
+    box-sizing: border-box; 
+    border-radius: 5px;
+}
+.produto {
+    flex: 1 1 calc(25% - 20px); 
+    border: 2px solid blue; 
+    background-color: lightblue; 
+    padding: 10px; 
+    box-sizing: border-box; 
+    min-width: 150px; 
+    text-align: center; 
+}
+.campoForm{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 10px;
+}
+.campoForm input{
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.campoForm button{
+    background-color: #888;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 40%;
+    height: 710px;
+}
+h1{
+    font-size: 25px;
+    margin-bottom: 10%;
+}
+.Disponivel{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.btnCadastrar{
+    background-color: #888;
+    color: #f00;
+    width: 100%;
+    border-radius: 5%;
+    cursor: pointer;
+}

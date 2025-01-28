@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho da Empresa - Oak</title>
+    <link rel="stylesheet" href="Trabalho_Oak.css">
+</head>
+<body>
+    <form name="f_cadastro" method="#">
+        <h1>Cadastro e listagem de produtos</h1>
+        <div id="criarProduto" class="criarProduto">
+            <div class="campoForm">
+                <label>Nome do Produto</label>
+                <input type="text" name="f_nome" id="f_nome" value="">
+            </div>
+            <div class="campoForm">
+                <label>Descrição do Produto</label>
+                <input type="text" name="f_descricao" id="f_descricao" value="">
+            </div>
+            <div class="campoForm">
+                <label>Valor do Produto</label>
+                <input type="number" name="f_valor" id="f_valor"value="0">
+            </div>
+            <div class="campoForm">
+                <label class="Disponivel">Disponivel para venda</label>
+                <div class="radio">
+                    <input type="radio" name="f_tipo" id="f_tipoSim" value="s">Sim
+                </div>
+                <div class="radio">
+                    <input type="radio" name="f_tipo" id="f_tipoNao" value="n" checked>Não
+                </div>
+            </div>
+            <div class="campoForm">
+                <button id="btn_addProduto">Cadastrar</button>
+            </div>
+        </div>
+        <div id="produtos" class="produtos">
+            <!--<div class="produto">Mouse</div-->
+        </div>
+    </form>
+    <script src="Trabalho_Oak.js"></script>
+</body>
+</html>
