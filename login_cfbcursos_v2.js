@@ -143,7 +143,6 @@ class Login{
                 sessionStorage.setItem("matlogado",mat);
                 sessionStorage.setItem("nomelogado",res.nome);
                 sessionStorage.setItem("acessologado",res.acesso);
-                sessionStorage.clear()
                 this.callback_ok();
                 this.fechar();          
                 // this.logado=true;
