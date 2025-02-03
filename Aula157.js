@@ -42,6 +42,16 @@ const dgv = (configdgv) => {
            const imgDelete = document.createElement("img");
            imgDelete.setAttribute("class", "dgvIcone");
            imgDelete.setAttribute("src", "lixeira.svg");
+           imgDelete.addEventListener("click", (evt) => {
+                const id = evt.target.parentNode.parentNode.firstChild.innerHTML;
+                const linha = evt.target.parentNode.parentNode;
+                const endpoint = `http://127.0.0.1:1880/removeproduto/:${id}`;
+                fetch(endpoint)
+                .then(resp=>{
+                    console.log(resp)
+                   
+                });
+           });
            c5.appendChild(imgDelete);
 
            const imgEditar = document.createElement("img");
