@@ -45,11 +45,12 @@ const dgv = (configdgv) => {
            imgDelete.addEventListener("click", (evt) => {
                 const id = evt.target.parentNode.parentNode.firstChild.innerHTML;
                 const linha = evt.target.parentNode.parentNode;
-                const endpoint = `http://127.0.0.1:1880/removeproduto/:${id}`;
+                const endpoint = `http://127.0.0.1:1880/removeproduto/${id}`;
                 fetch(endpoint)
-                .then(resp=>{
-                    console.log(resp)
-                   
+                .then(res=>{
+                    if(res.status==200){
+                        linha.remove();
+                    };
                 });
            });
            c5.appendChild(imgDelete);
