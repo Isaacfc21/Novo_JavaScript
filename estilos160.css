@@ -1,0 +1,145 @@
+*{
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#dgvProdutos{
+    display: flex;
+    justify-content: center;
+    /* height: 100vh; */
+}
+.dgv{
+    display: flex;
+    /* justify-content: center;
+    align-self: center; */
+    flex-direction: column;
+    align-items: center;
+}
+.dgvTitulos{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    background-color: #138;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #000;
+}
+.dgvDados{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+.dgvLinha{
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-direction: row;
+}
+.dgvLinha:nth-child(odd){
+    background-color: #aaa;
+}
+.dgvLinha:nth-child(even){
+    background-color: #ddd;
+}
+.dgvLinha:hover{
+    background-color: #088 !important;
+    cursor: pointer;
+    color: #fff !important;
+}
+.dgvTitulos div, .dgvLinha div{
+    padding: 5px;
+}
+.coluna{
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+}
+.c1{
+    width: 50px;
+}
+.c2{
+    width: 150px;
+}
+.c3{
+    width: 150px;
+}
+.c4{
+    width: 150px;
+}
+.c5{
+    width: 100px;
+    justify-content: space-around !important;
+    align-self: center;
+}
+.dgvIcone{
+    width: 20px;
+}
+/* Caixa View */
+
+.janelaView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.view{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #aaa;
+    padding: 10px;
+    border-radius: 5px;
+}
+.campo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 500px;
+}
+.campo input{
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+.rodape{
+    align-items: center !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+}
+.btn{
+    background-color: #480;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.ocultar{
+    display: none !important;
+}
+.adicionar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.btn_adicionar{
+    background-color: #480;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin: 5px;
+}
