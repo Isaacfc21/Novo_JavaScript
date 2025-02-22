@@ -1,0 +1,192 @@
+*{
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #f00; */
+}
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid #f00; */
+}
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid #f00; */
+}
+.aba{
+    background-color: #248;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    margin-right: 1px;
+}
+.abaSelecionada{
+    /* background-color: #248 !important; */
+    background-color: #ddd !important;
+}
+.if_principal{
+    width: inherit;
+    height: inherit;
+    overflow-x: hidden;
+    /* border: 1px solid #f00; */
+}
+
+/* NOVO */
+
+.elementosForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.e_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ocultar{
+    display: none;
+}
+.ocultar{
+    display: none;
+}
+.botoesForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.campoForm{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 5%;
+    width: 100%;
+}
+.campoForm label{
+    color: #ddd;
+}
+#novo{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.campoForm input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn_geral{
+    background-color: #248;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.adicionar_c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.adicionar_c img{
+    margin-top: 2%;
+    cursor: pointer;
+}
+.t_add{
+    font-size: 16pt;
+}
+#dgvUsuario{
+    display: flex;
+    justify-content: center;
+    /* height: 100vh; */
+}
+.dgv{
+    display: flex;
+    /* justify-content: center;
+    align-self: center; */
+    flex-direction: column;
+    align-items: center;
+}
+.dgvTitulos{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    background-color: #138;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #000;
+}
+.dgvDados{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+.dgvLinha{
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-direction: row;
+}
+.dgvLinha:nth-child(odd){
+    background-color: #aaa;
+}
+.dgvLinha:nth-child(even){
+    background-color: #ddd;
+}
+.dgvLinha:hover{
+    background-color: #088 !important;
+    cursor: pointer;
+    color: #fff !important;
+}
+.dgvTitulos div, .dgvLinha div{
+    padding: 5px;
+}
+.coluna{
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+}
+.c1{
+    width: 50px;
+}
+.c2{
+    width: 100px;
+}
+.c3{
+    width: 100px;
+}
+.c4{
+    width: 100px;
+}
+.c5{
+    width: 150px;
+    justify-content: space-around !important;
+    align-self: center;
+}
