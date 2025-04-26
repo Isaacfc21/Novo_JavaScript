@@ -10,15 +10,12 @@ const configdgv = {
 
 const dgv_usuario = (configdgv) => {
     const dgvUsuario = document.getElementById("dgvUsuario");
-    let dgvDados = document.getElementById("dgvDados");
 
-        if (!dgvDados) {
-            dgvDados = document.createElement("div");
-            dgvDados.setAttribute("id", "dgvDados");
-            dgvUsuario.appendChild(dgvDados);
-        } else {
-            dgvDados.innerHTML = ""; // Limpa os dados antigos
-        }
+        const dgvDados = document.createElement("div");
+        dgvDados.setAttribute("id", "dgvDados");
+        dgvDados.setAttribute("class", "dgvDados");
+        dgvUsuario.appendChild(dgvDados);
+        dgvDados.innerHTML = ""; // Limpa os dados antigos
     
         dgvUsuario.innerHTML="";
 
@@ -58,12 +55,9 @@ const dgv_usuario = (configdgv) => {
     .then(res=>res.json())
     .then(res =>{
         console.log(res)
-        res.reverse();
         res.forEach(el=>{
            const dgvLinha = document.createElement("div");
            dgvLinha.setAttribute("class", "dgvLinha");
-           dgvDados.appendChild(dgvLinha);
-           dgvUsuario.appendChild(dgvDados);
 
            const c1 = document.createElement("div");
            c1.setAttribute("class", " coluna c1");
@@ -89,13 +83,15 @@ const dgv_usuario = (configdgv) => {
            c5.setAttribute("class", "coluna c5");
            c5.innerHTML=el.s_data_usuario;
            dgvLinha.appendChild(c5);
+
+           dgvDados.appendChild(dgvLinha);
+           dgvUsuario.appendChild(dgvDados);
         });
     });
 };
 
 btn_gravar.addEventListener("click", (evt) => {
     elementosForm.setAttribute("class", "ocultar");
-    // adicionar_c.remove();
 
     const id = document.querySelector("#f_id").value;
     const nome = encodeURIComponent(document.querySelector("#f_nome").value);

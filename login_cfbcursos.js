@@ -130,39 +130,72 @@ class Login{
     };
 
     static verificalogin = () => {
-        const mat = document.getElementById("f_username").value;
-        const pas = document.getElementById("f_senha").value;
+        const mat = document.getElementById("f_username");
+        const pas = document.getElementById("f_senha");
 
-        const endpoint = `${this.config.endpoint}?matricula=${mat}&senha=${pas}`
+        const valores = {
+            "f_username": mat.value,
+            "f_username": pas.value
+        }
+        const cabecalho = {
+            method: 'POST',
+            dados:JSON.stringify(valores)
+        }
 
-        fetch(endpoint)
-        .then(res=>res.json())
+        const endpoint = `https://127.0.0.1:1880/add_username`
+
+        fetch(endpoint,cabecalho)
+        // .then(res=>res.json())
         .then(res=>{
-            if(res){
-                sessionStorage.setItem("logado","true");
-                sessionStorage.setItem("matlogado",mat);
-                sessionStorage.setItem("nomelogado",res.nome);
-                sessionStorage.setItem("acessologado",res.acesso);
-                this.callback_ok();
-                this.fechar();   
-                // this.logado=true;
-                // this.matlogado=mat;
-                // this.nomelogado=res.nome;
-                // this.acessologado=res.acesso;
+            if(res.status=200){
+                this.logado=true;
+                this.matlogado=mat;
+                this.nomelogado=res.nome;
+                this.acessologado=res.acesso;
                 this.callback_ok();
                 this.fechar();
+                console.log(res)
             }else{
-                sessionStorage.setItem("logado","false");
-                sessionStorage.setItem("matlogado","");
-                sessionStorage.setItem("nomelogado","");
-                sessionStorage.setItem("acessologado","");
-                // this.logado=false;
-                // this.matlogado=null;
-                // this.nomelogado=null;
-                // this.acessologado=null;
+                this.logado=false;
+                this.matlogado=null;
+                this.nomelogado=null;
+                this.acessologado=null;
                 this.callback_naook();
             }
         });
+        // const mat = document.getElementById("f_username").value;
+        // const pas = document.getElementById("f_senha").value;
+
+        // const endpoint = `${this.config.endpoint}?matricula=${mat}&senha=${pas}`
+
+        // fetch(endpoint)
+        // .then(res=>res.json())
+        // .then(res=>{
+        //     if(res){
+        //         sessionStorage.setItem("logado","true");
+        //         sessionStorage.setItem("matlogado",mat);
+        //         sessionStorage.setItem("nomelogado",res.nome);
+        //         sessionStorage.setItem("acessologado",res.acesso);
+        //         this.callback_ok();
+        //         this.fechar();   
+        //         // this.logado=true;
+        //         // this.matlogado=mat;
+        //         // this.nomelogado=res.nome;
+        //         // this.acessologado=res.acesso;
+        //         this.callback_ok();
+        //         this.fechar();
+        //     }else{
+        //         sessionStorage.setItem("logado","false");
+        //         sessionStorage.setItem("matlogado","");
+        //         sessionStorage.setItem("nomelogado","");
+        //         sessionStorage.setItem("acessologado","");
+        //         // this.logado=false;
+        //         // this.matlogado=null;
+        //         // this.nomelogado=null;
+        //         // this.acessologado=null;
+        //         this.callback_naook();
+        //     }
+        // });
     }
     static fechar = () => {
         const fundoLogin = document.querySelector("#fundoLogin");

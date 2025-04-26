@@ -10,7 +10,8 @@ class Login{
         cor: "048",
         img: "logo.png"
     };
-    static endpoint="https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/"
+    // static endpoint="https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/"
+    static endpoint="http://127.0.0.1:1880/addusername"
 
     static login=(callback_ok,callback_naook,config=null)=>{
         if(config!=null){
@@ -133,15 +134,26 @@ class Login{
     };
 
     static verificalogin = () => {
-        const mat = document.getElementById("f_username").value;
-        const pas = document.getElementById("f_senha").value;
+        const mat = document.getElementById("f_username");
+        const pas = document.getElementById("f_senha");
 
-        const endpoint = `https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/?matricula=${mat}&senha=${pas}`
+        const valores = {
+            "f_username": mat.value,
+            "f_senha": pas.value
+        }
+        const cabecalho = {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(valores)
+        }
+        
 
-        fetch(endpoint)
-        .then(res=>res.json())
+        const endpoint = `http://127.0.0.1:1880/addusername`
+
+        fetch(this.endpoint, cabecalho)
+        // .then(res=>res.json())
         .then(res=>{
-            if(res){
+            if(res.status === 200){
                 this.logado=true;
                 this.matlogado=mat;
                 this.nomelogado=res.nome;
@@ -157,6 +169,30 @@ class Login{
                 this.callback_naook();
             }
         });
+        // const mat = document.getElementById("f_username").value;
+        // const pas = document.getElementById("f_senha").value;
+
+        // const endpoint = `https://72fa6cf3-4535-4ccb-b924-ff4dda224448-00-r3vezqr20d6f.spock.replit.dev/?matricula=${mat}&senha=${pas}`
+
+        // fetch(endpoint)
+        // .then(res=>res.json())
+        // .then(res=>{
+        //     if(res){
+        //         this.logado=true;
+        //         this.matlogado=mat;
+        //         this.nomelogado=res.nome;
+        //         this.acessologado=res.acesso;
+        //         this.callback_ok();
+        //         this.fechar();
+        //         console.log(res)
+        //     }else{
+        //         this.logado=false;
+        //         this.matlogado=null;
+        //         this.nomelogado=null;
+        //         this.acessologado=null;
+        //         this.callback_naook();
+        //     }
+        // });
     }
     static fechar = () => {
         const fundoLogin = document.querySelector("#fundoLogin");
